@@ -1,6 +1,6 @@
 Name:       libecap
-Version:    0.0.3
-Release:    2%{?dist}
+Version:    0.2.0
+Release:    1%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
@@ -44,21 +44,23 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 rm -f %{buildroot}%{_libdir}/libecap.a
 rm -f %{buildroot}%{_libdir}/libecap.la
+rm -f %{buildroot}%{_libdir}/pkgconfig/libecap.pc
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %doc LICENSE CREDITS NOTICE README
 %{_libdir}/libecap.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %{_libdir}/libecap.so
 %{_includedir}/libecap
 
 %changelog
+* Mon Jul 11 2011 Chris Spike <spike@fedoraproject.org> 0.2.0-1
+- Updated to 0.2.0
+
 * Tue May 10 2011 Chris Spike <spike@fedoraproject.org> 0.0.3-2
 - Added LICENSE to doc
 - Fixed release tag (missing dist)
