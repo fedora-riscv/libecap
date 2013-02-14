@@ -1,6 +1,6 @@
 Name:       libecap
 Version:    0.2.0
-Release:    4%{?dist}
+Release:    5%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
@@ -58,6 +58,9 @@ rm -f %{buildroot}%{_libdir}/libecap.la
 %{_includedir}/libecap
 
 %changelog
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
