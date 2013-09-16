@@ -1,11 +1,12 @@
 Name:       libecap
 Version:    0.2.0
-Release:    6%{?dist}
+Release:    7%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
 URL:        http://www.e-cap.org/
 Source0:    http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
+Source1:    autoconf.h
 
 %description
 eCAP is a software interface that allows a network application, such as an 
@@ -45,6 +46,11 @@ make install DESTDIR=%{buildroot}
 rm -f %{buildroot}%{_libdir}/libecap.a
 rm -f %{buildroot}%{_libdir}/libecap.la
 
+# Rename libecap/common/autoconf.h to libecap/common/autoconf-<arch>.h to avoid file conflicts on
+# multilib systems and install autoconf.h wrapper
+mv %{buildroot}%{_includedir}/%{name}/common/autoconf.h %{buildroot}%{_includedir}/%{name}/common/autoconf-%{_arch}.h
+install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
+
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -58,6 +64,9 @@ rm -f %{buildroot}%{_libdir}/libecap.la
 %{_includedir}/libecap
 
 %changelog
+* Mon Sep 16 2013 Michal Luscon <mluscon@redhat.com> - 0.2.0-7
+- Fixed: #831404 - multilib conflicts due to platform dependent autoconf.h
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
