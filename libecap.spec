@@ -1,6 +1,6 @@
 Name:       libecap
 Version:    0.2.0
-Release:    8%{?dist}
+Release:    9%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
@@ -64,6 +64,9 @@ install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
 %{_includedir}/libecap
 
 %changelog
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.0-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Tue May 13 2014 Jaromir Capik <jcapik@redhat.com> - 0.2.0-8
 - Introducing suppport for ppc64le in autoconf.h (#1075180)
 
