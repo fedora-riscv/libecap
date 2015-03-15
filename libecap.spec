@@ -6,6 +6,7 @@ License:    BSD
 Group:      Development/Libraries
 URL:        http://www.e-cap.org/
 Source0:    http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
+Source1:    autoconf.h
 
 %description
 eCAP is a software interface that allows a network application, such as an 
@@ -48,6 +49,7 @@ rm -f %{buildroot}%{_libdir}/libecap.la
 # Rename libecap/common/autoconf.h to libecap/common/autoconf-<arch>.h to avoid file conflicts on
 # multilib systems and install autoconf.h wrapper
 mv %{buildroot}%{_includedir}/%{name}/common/autoconf.h %{buildroot}%{_includedir}/%{name}/common/autoconf-%{_arch}.h
+install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
