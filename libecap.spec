@@ -1,6 +1,6 @@
 Name:       libecap
 Version:    1.0.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
@@ -64,6 +64,9 @@ install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
 %{_includedir}/libecap
 
 %changelog
+* Sat May 02 2015 Kalev Lember <kalevlember@gmail.com> - 1.0.0-2
+- Rebuilt for GCC 5 C++11 ABI change
+
 * Fri Mar 13 2015 Pavel Šimerda <psimerda@redhat.com> - 1.0.0-1
 - new version 1.0.0
 
