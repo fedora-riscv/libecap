@@ -66,6 +66,7 @@ install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
 %changelog
 * Mon Aug 21 2017 Luboš Uhliarik <luhliari@redhat.com> - 1.0.1-1
 - new version 1.0.1
+- autoconf.h moved from lookaside to dist-git
 
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
