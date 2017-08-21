@@ -1,6 +1,6 @@
 Name:       libecap
-Version:    1.0.0
-Release:    7%{?dist}
+Version:    1.0.1
+Release:    1%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
@@ -64,6 +64,9 @@ install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
 %{_includedir}/libecap
 
 %changelog
+* Mon Aug 21 2017 Luboš Uhliarik <luhliari@redhat.com> - 1.0.1-1
+- new version 1.0.1
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
