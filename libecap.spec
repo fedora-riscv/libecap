@@ -1,6 +1,6 @@
 Name:       libecap
 Version:    1.0.1
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Squid interface for embedded adaptation modules
 License:    BSD
 Group:      Development/Libraries
@@ -64,6 +64,9 @@ install -m644 %{SOURCE1} %{buildroot}%{_includedir}/%{name}/common/autoconf.h
 %{_includedir}/libecap
 
 %changelog
+* Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Mon Aug 21 2017 Luboš Uhliarik <luhliari@redhat.com> - 1.0.1-1
 - new version 1.0.1
 - autoconf.h moved from lookaside to dist-git
