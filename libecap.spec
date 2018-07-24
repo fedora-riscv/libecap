@@ -8,6 +8,7 @@ URL:        http://www.e-cap.org/
 Source0:    http://www.measurement-factory.com/tmp/ecap/%{name}-%{version}.tar.gz
 Source1:    autoconf.h
 
+BuildRequires:  gcc
 %description
 eCAP is a software interface that allows a network application, such as an 
 HTTP proxy or an ICAP server, to outsource content analysis and adaptation to 
