@@ -9,6 +9,7 @@ Source1:    autoconf.h
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
+BuildRequires: make
 
 %description
 eCAP is a software interface that allows a network application, such as an 
